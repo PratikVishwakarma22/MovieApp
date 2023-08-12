@@ -1,0 +1,93 @@
+body {
+  padding-top: 18vh;
+  background: linear-gradient(to bottom, #121212, #222);
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 1000;
+  height: 15vh;
+}
+
+.message-container{
+  align-self: center;
+  min-height: 4vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: bisque;
+}
+
+.message{
+  font-size: 1.2vw;
+}
+
+.nav-container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.navbar-nav {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar-nav:nth-child(1) {
+  width: 60%;
+}
+
+.nav-item {
+  margin-right: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.nav-item a {
+  all: unset;
+  margin-right: 20px;
+  color: var(--secondary);
+  font-size: 4vh;
+}
+
+.nav-item a:active {
+  color: goldenrod;
+}
+
+.form-inline{
+  margin-right: 10vh;
+}
+
+.form-inline input{
+  width: 20vw;
+  height: 6vh;
+  border-radius: 1vw;
+  border-style: none;
+  padding-left: 10px;
+}
+
+.form-inline .btn{
+  all: unset;
+  height: 6vh;
+  margin-left: 1vw;
+  font-size: 3vh;
+}
+
+.form-inline button:hover{
+  color: antiquewhite;
+}
+.form-inline button:active{
+  color: white;
+}
+

@@ -1,0 +1,29 @@
+<nav class="navbar fixed-top">
+  <div class="nav-container">
+    <ul class="navbar-nav nav-container-item">
+      <li class="nav-item">
+        <%= link_to latest_movies_path, class: "nav-link" do %>
+          Home
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to favourites_movies_path, class: "nav-link" do %>
+          Favourite Movies
+        <% end %>
+      </li>
+    </ul>
+
+    <%= form_tag(search_movie_movies_path, method: "get", class: "form-inline") do %>
+      <%= text_field_tag(:title, params[:title], class: "form-control mr-sm-2", placeholder: "search by title", aria_label: "Search") %>
+      <%= submit_tag("Search", class: "btn") %>
+    <% end %>    
+  </div>
+
+  <div class="message-container">
+    <% flash.each do |type, msg| %>
+      <div class="message">
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+</nav>

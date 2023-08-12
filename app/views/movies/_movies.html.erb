@@ -1,0 +1,33 @@
+<%= render 'shared/navbar' %> 
+<% if action == "latest" %> 
+  <%= render 'shared/jmbotron' %>    
+<% end %>
+
+<div class="movies-container">
+  <% movies.each do |movie| %>
+    <% fav_movies = TmdbApiService.new.favourites %>
+    <% @favourites = [] %>
+    <% fav_movies["results"].each do |fav| %>
+      <% @favourites.push(fav["id"]) %>
+    <% end %>
+
+    <div class="movie">
+      <%= link_to movie_path(movie[:id]), target: "_blank" do %>
+        <%= image_tag "https://image.tmdb.org/t/p/w500/#{movie[:poster_path]}", alt: movie['title'] %>
+        <h3><%= movie[:title] %></h3>
+      <% end %>
+      <% if action == "latest" %>
+        <% unless @favourites.include?(movie[:id]) %>     
+          <%= button_to "Add to favourite", movie_add_to_favourite_list_path(movie[:id]), method: :post, class: "favourite" %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+  
+<% if action == "search_movie" && movies.blank? %>
+  <div class="empty_movie">
+    <h1>There is no such movie exist</h1>
+  <div>
+<% end %>
+

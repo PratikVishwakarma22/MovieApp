@@ -1,0 +1,18 @@
+/* app/assets/stylesheets/movies.css */
+.jumbotron {
+  /* background-color:  #f8f9fa; */
+  text-align: center;
+  padding: 100px 0;
+  margin-top: -20px; /* Adjust as needed based on your navbar height */
+}
+
+.jumbotron h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+
+.jumbotron p {
+  font-size: 18px;
+  color: var(--secondary);
+}

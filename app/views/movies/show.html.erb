@@ -1,0 +1,20 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <%= image_tag "https://image.tmdb.org/t/p/w500/#{@formatted_movie[:poster_path]}", alt: @formatted_movie['title'], class: "movie-poster" %>
+  <div class="formated-movie">
+    <h1 class="movie-title"><%= @formatted_movie[:title] %></h1>
+    <p class="release-date">Release Date: <%= @formatted_movie[:release_date] %></p>
+    <div class="overview">
+      <p><%= @formatted_movie[:overview] %></p>
+    </div>
+    <ul class="details-list">
+      <li><strong>Genres:</strong> <%= @formatted_movie[:genres] %></li>
+      <li><strong>Runtime:</strong> <%= @formatted_movie[:runtime] %></li>
+      <li><strong>IMDB ID:</strong> <%= @formatted_movie[:imdb_id] %></li>
+      <li><strong>Homepage:</strong> <%= link_to @formatted_movie[:homepage], target: "_blank" %></li>
+      <li><strong>Tagline:</strong> <%= @formatted_movie[:tagline] %></li>
+      <li><strong>Vote Average:</strong> <%= @formatted_movie[:vote_average] %></li>
+      <li><strong>Revenue:</strong> <%= @formatted_movie[:revenue] %></li>
+    </ul>
+  </div>
+</div>
